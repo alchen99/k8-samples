@@ -1,0 +1,7 @@
+# Example configuration for the echo apple app
+commonLabels:
+  app: apple
+
+resources:
+- deployment.yml
+- service.yml

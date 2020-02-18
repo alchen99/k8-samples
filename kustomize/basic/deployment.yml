@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apple-dep
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        deployment: apple
+    spec:
+      containers:
+      - name: apple-app
+        image: hashicorp/http-echo
+        args:
+          - "-text=apple"
