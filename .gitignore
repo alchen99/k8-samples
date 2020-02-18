@@ -23,6 +23,4 @@ zzz-*/
 # Ignore binary files
 *.zip
 *.rpm
-*.tgz
-*.tar.gz
 *.pyc
