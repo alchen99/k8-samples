@@ -3,12 +3,11 @@ entries:
   apple:
   - apiVersion: v1
     appVersion: 0.2.3
-    created: "2020-02-18T14:46:54.385637-08:00"
+    created: "2020-02-18T17:22:28.950066-08:00"
     description: A Helm chart for Kubernetes
-    digest: 0cb64b347e00cb43da91aae7c2faf6b0f7a80cac85a687b1cb5543de571d1d2b
+    digest: 5df94e945319cdcc105f76103d12f24cd424cd41b401984828b6cccb9503d23f
     name: apple
-    type: application
     urls:
     - apple-0.1.0.tgz
     version: 0.1.0
-generated: "2020-02-18T14:46:54.384255-08:00"
+generated: "2020-02-18T17:22:28.949566-08:00"
