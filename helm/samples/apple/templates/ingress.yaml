@@ -17,10 +17,10 @@ metadata:
     alb.ingress.kubernetes.io/scheme: {{ .Values.ingress.albManageTraffic.scheme }}
     {{ if .Values.ingress.albManageTraffic.prevService.name -}}
     alb.ingress.kubernetes.io/actions.forward-multiple-tg: >
-      {"Type":"forward","ForwardConfig":{"TargetGroups":[{"ServiceName":"{{ .Values.ingress.albManageTraffic.prevService.name }}","ServicePort":"{{ $svcPort }}","Weight":{{ .Values.ingress.albManageTraffic.prevService.weight}}},{"ServiceName":"{{ include "apple-svc.chart" . }}","ServicePort":"{{ $svcPort }}","Weight":{{ .Values.ingress.albManageTraffic.currService.weight}}}],"TargetGroupStickinessConfig":{"Enabled":false,"DurationSeconds":200}}}
+      {"Type":"forward","ForwardConfig":{"TargetGroups":[{"ServiceName":"{{ .Values.ingress.albManageTraffic.prevService.name }}","ServicePort":"{{ $svcPort }}","Weight":{{ .Values.ingress.albManageTraffic.prevService.weight}}},{"ServiceName":"{{ include "apple-svc.svcName" . }}","ServicePort":"{{ $svcPort }}","Weight":{{ .Values.ingress.albManageTraffic.currService.weight}}}],"TargetGroupStickinessConfig":{"Enabled":false,"DurationSeconds":200}}}
     {{- else -}}
     alb.ingress.kubernetes.io/actions.forward-multiple-tg: >
-      {"Type":"forward","ForwardConfig":{"TargetGroups":[{"ServiceName":"{{ include "apple-svc.chart" . }}","ServicePort":"{{ $svcPort }}","Weight":100}],"TargetGroupStickinessConfig":{"Enabled":false,"DurationSeconds":200}}}
+      {"Type":"forward","ForwardConfig":{"TargetGroups":[{"ServiceName":"{{ include "apple-svc.svcName" . }}","ServicePort":"{{ $svcPort }}","Weight":100}],"TargetGroupStickinessConfig":{"Enabled":false,"DurationSeconds":200}}}
     {{- end }}
 spec:
   rules:

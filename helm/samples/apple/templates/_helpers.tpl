@@ -61,3 +61,12 @@ Create the name of the service account to use
     {{ default "default" .Values.serviceAccount.name }}
 {{- end -}}
 {{- end -}}
+
+{{/*
+Create chart service name with version.
+We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
+*/}}
+{{- define "apple-svc.svcName" -}}
+{{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "-" | replace "." "-" | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+
