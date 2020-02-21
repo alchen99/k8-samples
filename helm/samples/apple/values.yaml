@@ -44,10 +44,10 @@ ingress:
     scheme: "internet-facing"
     path: "/*"
     prevService:
-      name: "apple-0-1-1"
-      weight: 100
-    currService:
+      name: ""
       weight: 0
+    currService:
+      weight: 100
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
