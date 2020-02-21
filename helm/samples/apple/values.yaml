@@ -37,13 +37,17 @@ service:
 
 ingress:
   enabled: true
-  annotations:
-    kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/scheme: internet-facing
-  hosts:
-    - paths:
-        - "/*"
-        
+  # Set albManageTraffic.prevService.name if using traffic shaping with ALB Ingress Controller.
+  # Otherwise the assumption is that there is only the current service to bind to the ingress. In
+  #   this case the weight parameter is ignored
+  albManageTraffic:
+    scheme: "internet-facing"
+    path: "/*"
+    prevService:
+      name: "apple-v2"
+      weight: 100
+    currService:
+      weight: 0
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "apple-svc.fullname" . }}
+  name: {{ include "apple-svc.chart" . }}
   namespace: {{ .Release.Namespace }}
   labels:
     {{- include "apple-svc.labels" . | nindent 4 }}
