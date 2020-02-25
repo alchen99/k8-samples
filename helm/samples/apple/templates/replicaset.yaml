@@ -4,7 +4,7 @@ metadata:
   name: {{ include "apple-svc.fullname" . }}
   namespace: {{ .Release.Namespace }}
   annotations:
-    strategy.spinnaker.io/recreate: true
+    strategy.spinnaker.io/recreate: "true"
   labels:
     {{- include "apple-svc.labels" . | nindent 4 }}
 spec:

@@ -37,14 +37,21 @@ Common labels
 {{- define "apple-svc.labels" -}}
 helm.sh/chart: {{ include "apple-svc.chart" . }}
 {{ include "apple-svc.selectorLabels" . }}
-app.kubernetes.io/managed-by: {{ .Release.Service }}
-app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end -}}
 
 {{/*
 Selector labels
 */}}
 {{- define "apple-svc.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "apple-svc.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end -}}
+
+{{/*
+Selector labels for the prev service. Minus version since that will be injected by service template
+*/}}
+{{- define "apple-svc.prevSelectorLabels" -}}
 app.kubernetes.io/name: {{ include "apple-svc.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end -}}

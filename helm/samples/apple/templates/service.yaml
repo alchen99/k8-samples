@@ -13,7 +13,7 @@ spec:
       targetPort: {{ .Values.service.targetPort }}
       protocol: TCP
   selector:
-    {{- include "apple-svc.selectorLabels" . | nindent 4 }}
+    {{- include "apple-svc.prevSelectorLabels" . | nindent 4 }}
     app.kubernetes.io/version: {{ .Values.ingress.albManageTraffic.prevService.version | quote }}
 
 ---
@@ -33,4 +33,3 @@ spec:
       protocol: TCP
   selector:
     {{- include "apple-svc.selectorLabels" . | nindent 4 }}
-    app.kubernetes.io/version: {{ .Chart.AppVersion | quote }} 
