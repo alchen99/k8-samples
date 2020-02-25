@@ -37,10 +37,8 @@ Common labels
 {{- define "apple-svc.labels" -}}
 helm.sh/chart: {{ include "apple-svc.chart" . }}
 {{ include "apple-svc.selectorLabels" . }}
-{{- if .Chart.AppVersion }}
-app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
-{{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end -}}
 
 {{/*
