@@ -2,8 +2,17 @@ apiVersion: v1
 entries:
   apple:
   - apiVersion: v1
+    appVersion: 0.2.0
+    created: "2020-03-25T13:03:22.154761-07:00"
+    description: A Helm chart for Kubernetes
+    digest: dc63c4502e7699e58101095da878ede6e002441b351882616ff1302cd2771e31
+    name: apple
+    urls:
+    - apple-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v1
     appVersion: 0.2.1
-    created: "2020-03-24T22:07:00.421557-07:00"
+    created: "2020-03-25T13:03:22.154488-07:00"
     description: A Helm chart for Kubernetes
     digest: f8f5a9ba7a4e630b4146fe0734e28e777b70dac4a526a005b96817bfd33f5e58
     name: apple
@@ -12,11 +21,11 @@ entries:
     version: 0.2.1
   - apiVersion: v1
     appVersion: 0.2.0
-    created: "2020-03-24T22:07:00.421208-07:00"
+    created: "2020-03-25T13:03:22.153527-07:00"
     description: A Helm chart for Kubernetes
     digest: 42ab0a377330e2692c7390f6af2177f2c873a238bb4ea0e6398e0b98e49f0a3f
     name: apple
     urls:
     - apple-0.2.0.tgz
     version: 0.2.0
-generated: "2020-03-24T22:07:00.419884-07:00"
+generated: "2020-03-25T13:03:22.15239-07:00"
