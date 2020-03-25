@@ -45,9 +45,9 @@ ingress:
     prevService:
       name: "apple-prod"
       version: "0.2.1"
-      weight: 75
+      weight: 50
     currService:
-      weight: 25
+      weight: 50
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
