@@ -37,15 +37,14 @@ service:
 
 ingress:
   enabled: true
-  # Set albManageTraffic.prevService.name if using traffic shaping with ALB Ingress Controller.
-  # Otherwise the assumption is that there is only the current service to bind to the ingress. In
-  #   this case the weight parameter is ignored
+  # Set albManageTraffic.prevService.name and albManageTraffic.prevService.version if using traffic shaping with ALB Ingress Controller.
+  # Otherwise the assumption is that there is only the current service to bind to the ingress. In this case the weight parameter is ignored
   albManageTraffic:
     scheme: "internet-facing"
     path: "/*"
     prevService:
-      name: ""
-      version: ""
+      name: "apple-prod"
+      version:
       weight: 0
     currService:
       weight: 100
