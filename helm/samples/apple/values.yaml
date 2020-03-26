@@ -44,7 +44,7 @@ ingress:
     path: "/*"
     prevService:
       name: "apple-prod"
-      version:
+      version: "0.2.0"
       weight: 0
     currService:
       weight: 100
