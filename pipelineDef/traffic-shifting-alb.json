@@ -1,0 +1,225 @@
+{
+  "appConfig": {},
+  "expectedArtifacts": [
+    {
+      "defaultArtifact": {
+        "artifactAccount": "armory",
+        "id": "d5820cea-c44b-4814-9218-aaf6fbec93f1",
+        "name": "helm/samples/apple/values.yaml",
+        "reference": "https://api.github.com/repos/alchen99/k8-samples/contents/helm/samples/apple/values.yaml",
+        "type": "github/file",
+        "version": "shift-030-031"
+      },
+      "displayName": "apple-helm-values",
+      "id": "944f636b-c67c-4307-ac20-47f57441e949",
+      "matchArtifact": {
+        "artifactAccount": "armory",
+        "id": "d6c7fd05-1326-4bab-ba6f-5a865edd6e30",
+        "name": "helm/samples/apple/values.yaml",
+        "type": "github/file"
+      },
+      "useDefaultArtifact": true,
+      "usePriorArtifact": false
+    },
+    {
+      "defaultArtifact": {
+        "artifactAccount": "alchen99-git-helm-test-repo",
+        "id": "00b584c0-3a02-46c8-b05c-34de760fbb2a",
+        "name": "apple",
+        "type": "helm/chart",
+        "version": "0.3.3"
+      },
+      "displayName": "honest-vampirebat-99",
+      "id": "7f2ec897-5318-4ee2-9400-aea7145605ef",
+      "matchArtifact": {
+        "artifactAccount": "alchen99-git-helm-test-repo",
+        "id": "34900419-ef14-48d1-b61a-4c9cf82f416d",
+        "name": "apple",
+        "type": "helm/chart",
+        "version": "0.3.3"
+      },
+      "useDefaultArtifact": true,
+      "usePriorArtifact": false
+    }
+  ],
+  "keepWaitingPipelines": false,
+  "lastModifiedBy": "alchen99",
+  "limitConcurrent": true,
+  "parameterConfig": [
+    {
+      "default": "NO",
+      "description": "Shift traffic?",
+      "hasOptions": true,
+      "label": "",
+      "name": "shiftTraffic",
+      "options": [
+        {
+          "value": "NO"
+        },
+        {
+          "value": "YES"
+        }
+      ],
+      "pinned": false,
+      "required": true
+    }
+  ],
+  "stages": [
+    {
+      "account": "apple-np",
+      "cloudProvider": "kubernetes",
+      "manifestArtifactAccount": "embedded-artifact",
+      "manifestArtifactId": "c1576887-e690-4691-8896-fe77dac3b647",
+      "moniker": {
+        "app": "alb"
+      },
+      "name": "Deploy traffic shifting",
+      "refId": "2",
+      "requiredArtifactIds": [],
+      "requiredArtifacts": [],
+      "requisiteStageRefIds": [
+        "3"
+      ],
+      "skipExpressionEvaluation": false,
+      "source": "artifact",
+      "trafficManagement": {
+        "enabled": false,
+        "options": {
+          "enableTraffic": false,
+          "services": []
+        }
+      },
+      "type": "deployManifest"
+    },
+    {
+      "expectedArtifacts": [
+        {
+          "defaultArtifact": {
+            "customKind": true,
+            "id": "476a30fd-bb0f-46db-92e6-e87122fbd36e"
+          },
+          "displayName": "jolly-fox-38",
+          "id": "c1576887-e690-4691-8896-fe77dac3b647",
+          "matchArtifact": {
+            "id": "1a8c13c1-2438-473d-8954-e1d48b4030c1",
+            "name": "apple-helm-base64",
+            "type": "embedded/base64"
+          },
+          "useDefaultArtifact": false,
+          "usePriorArtifact": false
+        }
+      ],
+      "inputArtifacts": [
+        {
+          "account": "alchen99-git-helm-test-repo",
+          "id": "7f2ec897-5318-4ee2-9400-aea7145605ef"
+        },
+        {
+          "account": "armory",
+          "id": "944f636b-c67c-4307-ac20-47f57441e949"
+        }
+      ],
+      "name": "Bake traffic shifting",
+      "namespace": "apple-dev",
+      "outputName": "apple",
+      "overrides": {},
+      "refId": "3",
+      "requisiteStageRefIds": [
+        "7"
+      ],
+      "templateRenderer": "HELM2",
+      "type": "bakeManifest"
+    },
+    {
+      "expectedArtifacts": [
+        {
+          "defaultArtifact": {
+            "customKind": true,
+            "id": "4e63c499-629a-4997-b9e5-bc6c886c17a5"
+          },
+          "displayName": "tiny-emu-4",
+          "id": "a0bdc13a-8aa3-45d0-b1df-50b67ff7d947",
+          "matchArtifact": {
+            "id": "69eb48c7-0120-403c-b5e3-cf14c3d81b9e",
+            "name": "apple-helm-new-version",
+            "type": "embedded/base64"
+          },
+          "useDefaultArtifact": false,
+          "usePriorArtifact": false
+        }
+      ],
+      "inputArtifacts": [
+        {
+          "account": "alchen99-git-helm-test-repo",
+          "id": "7f2ec897-5318-4ee2-9400-aea7145605ef"
+        }
+      ],
+      "name": "Bake new version",
+      "namespace": "apple-dev",
+      "outputName": "apple",
+      "overrides": {},
+      "refId": "4",
+      "requisiteStageRefIds": [
+        "6"
+      ],
+      "templateRenderer": "HELM2",
+      "type": "bakeManifest"
+    },
+    {
+      "account": "apple-np",
+      "cloudProvider": "kubernetes",
+      "manifestArtifactAccount": "embedded-artifact",
+      "manifestArtifactId": "a0bdc13a-8aa3-45d0-b1df-50b67ff7d947",
+      "moniker": {
+        "app": "alb"
+      },
+      "name": "Deploy new version",
+      "refId": "5",
+      "requisiteStageRefIds": [
+        "4"
+      ],
+      "skipExpressionEvaluation": false,
+      "source": "artifact",
+      "trafficManagement": {
+        "enabled": false,
+        "options": {
+          "enableTraffic": false,
+          "services": []
+        }
+      },
+      "type": "deployManifest"
+    },
+    {
+      "name": "Not traffic shifting",
+      "preconditions": [
+        {
+          "context": {
+            "expression": "${ parameters[\"shiftTraffic\"].equals(\"NO\") }"
+          },
+          "failPipeline": false,
+          "type": "expression"
+        }
+      ],
+      "refId": "6",
+      "requisiteStageRefIds": [],
+      "type": "checkPreconditions"
+    },
+    {
+      "name": "Traffic shifting",
+      "preconditions": [
+        {
+          "context": {
+            "expression": "${ parameters[\"shiftTraffic\"].equals(\"YES\") }"
+          },
+          "failPipeline": false,
+          "type": "expression"
+        }
+      ],
+      "refId": "7",
+      "requisiteStageRefIds": [],
+      "type": "checkPreconditions"
+    }
+  ],
+  "triggers": [],
+  "updateTs": "1585266538000"
+}
