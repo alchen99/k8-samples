@@ -1,7 +1,7 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
-  name: {{ include "apple-svc.fullname" . }}
+  name: {{ include "apple-svc.depName" . }}
   namespace: {{ .Release.Namespace }}
   labels:
     {{- include "apple-svc.labels" . | nindent 4 }}

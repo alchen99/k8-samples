@@ -68,6 +68,14 @@ Create the name of the service account to use
 {{- end -}}
 
 {{/*
+Create chart deployment name with version.
+We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
+*/}}
+{{- define "apple-svc.depName" -}}
+{{- printf "%s-%s" .Chart.Name .Chart.AppVersion | replace "+" "-" | replace "." "-" | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+
+{{/*
 Create chart service name with version.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 */}}
