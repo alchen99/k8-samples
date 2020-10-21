@@ -3,7 +3,7 @@ entries:
   apple:
   - apiVersion: v1
     appVersion: 0.2.3
-    created: "2020-09-21T17:33:18.04143-07:00"
+    created: "2020-10-21T13:23:52.230636-07:00"
     description: A Helm chart for Kubernetes
     digest: 76a76c912c82ee517c923be8f3d971598734ca98b869e2ac13ccce79a172800a
     name: apple
@@ -12,7 +12,7 @@ entries:
     version: 0.3.3
   - apiVersion: v1
     appVersion: 0.2.1
-    created: "2020-09-21T17:33:18.040979-07:00"
+    created: "2020-10-21T13:23:52.230287-07:00"
     description: A Helm chart for Kubernetes
     digest: 6b396f8c0f230c8f61a1d6c8ddc5770a3376a6b3c62c299aa7ba090bc76f4d0a
     name: apple
@@ -21,7 +21,7 @@ entries:
     version: 0.3.1
   - apiVersion: v1
     appVersion: 0.2.0
-    created: "2020-09-21T17:33:18.039877-07:00"
+    created: "2020-10-21T13:23:52.229841-07:00"
     description: A Helm chart for Kubernetes
     digest: 384c0d517d193cf2ce9e9a4fa8665c68284dca043cefd4e2df632c2ccfb14c44
     name: apple
@@ -30,7 +30,7 @@ entries:
     version: 0.3.0
   - apiVersion: v1
     appVersion: 0.2.1
-    created: "2020-09-21T17:33:18.039249-07:00"
+    created: "2020-10-21T13:23:52.229308-07:00"
     description: A Helm chart for Kubernetes
     digest: f8f5a9ba7a4e630b4146fe0734e28e777b70dac4a526a005b96817bfd33f5e58
     name: apple
@@ -39,7 +39,7 @@ entries:
     version: 0.2.1
   - apiVersion: v1
     appVersion: 0.2.0
-    created: "2020-09-21T17:33:18.038394-07:00"
+    created: "2020-10-21T13:23:52.22872-07:00"
     description: A Helm chart for Kubernetes
     digest: 42ab0a377330e2692c7390f6af2177f2c873a238bb4ea0e6398e0b98e49f0a3f
     name: apple
@@ -49,7 +49,16 @@ entries:
   colors:
   - apiVersion: v1
     appVersion: 0.1.1
-    created: "2020-09-21T17:33:18.042507-07:00"
+    created: "2020-10-21T13:23:52.23333-07:00"
+    description: A Helm chart for Kubernetes
+    digest: ab8386ccd4aab05f3e8adfdcb188a3044c411f940f39295d09f0cf260c586d39
+    name: colors
+    urls:
+    - colors-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v1
+    appVersion: 0.1.1
+    created: "2020-10-21T13:23:52.233042-07:00"
     description: A Helm chart for Kubernetes
     digest: ac9d2079ae2f1b65cee546617816d05032531166ad2d8972fe4a3856a820a382
     name: colors
@@ -58,11 +67,11 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: 0.1.0
-    created: "2020-09-21T17:33:18.042227-07:00"
+    created: "2020-10-21T13:23:52.23242-07:00"
     description: A Helm chart for Kubernetes
     digest: 62b72ca59f1229409a1727356877799864b8d7065bde8d02afc55481b37272a5
     name: colors
     urls:
     - colors-0.1.0.tgz
     version: 0.1.0
-generated: "2020-09-21T17:33:18.036432-07:00"
+generated: "2020-10-21T13:23:52.227649-07:00"
