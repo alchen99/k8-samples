@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: index.docker.io/alchen99/express-hello-world
-  tag: red
+  tag: green
   pullPolicy: IfNotPresent
   bind: false
 
