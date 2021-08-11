@@ -1,0 +1,17 @@
+# Default values for colors.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: index.docker.io/alchen99/express-hello-world
+  tag: blue
+  pullPolicy: IfNotPresent
+  bind: false
+
+execution: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""

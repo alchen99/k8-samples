@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-template-web
+  namespace: service-template
+  annotations:
+    strategy.spinnaker.io/max-version-history: '3'
+  labels:
+    service: service-template
+    app: web
+spec:
+  type: ""
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: container-port
+  selector:
+    spinnaker-service: service-template
+    spinnaker-app: web
