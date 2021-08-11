@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: service-template-web
+  namespace: service-template
+  annotations:
+    strategy.spinnaker.io/max-version-history: '3'
+  labels:
+    service: service-template
+    app: web
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      service: service-template
+      app: web
+
+  template:
+    metadata:
+      labels:
+        service: service-template
+        app: web
+    spec:
+      terminationGracePeriodSeconds: 30
+      containers:
+        - name: web
+          image: "{{ .Values.image.repository }}{{ if not .Values.image.bind }}:{{ .Values.image.tag }}{{- end }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
