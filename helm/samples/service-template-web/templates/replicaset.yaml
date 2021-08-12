@@ -26,6 +26,9 @@ spec:
         - name: web
           image: "{{ .Values.image.repository }}{{ if not .Values.image.bind }}:{{ .Values.image.tag }}{{- end }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          envFrom:
+          - configMapRef:
+              name: service-template-web-configmap
           ports:
             - name: http
               containerPort: 80
