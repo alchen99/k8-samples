@@ -11,3 +11,4 @@ metadata:
 data:
   AWS_METADATA_SERVICE_TIMEOUT : "30"
   AWS_METADATA_SERVICE_NUM_ATTEMPTS: "3"
+  CONTAINER_IMAGE: "{{ .Values.image.tag }}"
